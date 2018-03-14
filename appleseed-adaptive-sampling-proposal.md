@@ -125,6 +125,8 @@ I will have vacations from May 25 to August 31, which leaves a bit more time tha
 
 ## Bio
 
+I am 21 year old, studying *Compute Science and Image Science* at the University of Strasbourg, France, currently in first year of a Master's Degree. Computer graphics and especially rendering passionates me, I am doing my best for being ready to enter the industry. I have experience with NPR and real-time rendering, and I am learning about physically based renderers. I have professional experience with Python which I acquired by working in 2 different animation studios (one in Luxembourg named *La Fabrique d'Images* and one in Paris named *Ellipsanime*). Developping tools for artists was my principal task. Thanks to school and personnal projects, I have advanced knowledge of C++ and C. Also, I am starting to get confortable with Scientific Papers as I am using them to implement school projects.
+
 ## References
 
 - [A Hierarchical Automatic Stopping Condition for Monte Carlo Global Illumination](https://jo.dreggn.org/home/2009_stopping.pdf)
