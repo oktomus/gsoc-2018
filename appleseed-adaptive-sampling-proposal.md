@@ -42,13 +42,10 @@ Adaptive image plane sampling can be done in various ways. We need to find what 
 
 ### 3. Tests / Optimization
 
-### 4. Default settings
-
-### 5. User interface integration
-
-### 6. Comparaisons
-
-### 7. Migration
+- Test if the rendered images are correct
+- Observe how pixels are sampled
+- Reduce memory use if possible
+- Port the implementation on multiple threads if originally implemented on a unique thread
 
 ## Project Schedule
 
