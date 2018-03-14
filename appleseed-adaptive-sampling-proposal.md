@@ -17,27 +17,38 @@ After this project, rendered images would be less noisy compared to the same ima
 
 ## Deliverables
 
-In the source code of appleseed, I will add the following:
-- `src/....`
-I will also write a wiki page to explain how it works and on what it is implemented.
+In the source code of appleseed, I will add and or edit the following:
+- `src/appleseed/renderer/kernel/rendering/generic/...`
+    - `tilejob.cpp`
+    - `adaptivetilerenderer.cpp`
+    - `uniformtilerenderer.cpp`
+    - `tilerendererbase.cpp`
+- `src/appleseed/renderer/kernel/rendering/final/...`
+    - `adaptivepixelrenderer.cpp`
+ 
+I will also write a wiki page to explain how it works and on what it was implemented.
 
 ## Project Details
 
 See [appleseed-adaptive-sampling-project.md](appleseed-adaptive-sampling-project.md) for the original project description.
 
-### Survey
+### 1. Survey
 
-### Implementation / Refactoring
+Adaptive image plane sampling can be done in various ways. We need to find what method can be implemented into appleseed. Up to know, *Dammertz and al.*'s method seems to be efficient and work fine on animations. It computes the variance across a block a pixel instead of doing it on each pixel. On each iteration, it samples and then compute each block's variance. If the block's variance is higher than a terminaison threshold, it will then be splitted in 2. The original block being the whole image.
 
-### Tests / Optimization
+*Yining Karl Li* propose a modification of this method to make it more efficient. He sets a lower bound on blocks' size to avoid undersampling of some pixels. Also, instead of reducing the number of sample when blocks are getting closer to the threshold, it simply keep the same amount of path and reallocate them to high-variance pixels. This reduce noise and fireflies in the final image.
 
-### Default settings
+### 2. Implementation / Refactoring
 
-### User interface integration
+### 3. Tests / Optimization
 
-### Comparaisons
+### 4. Default settings
 
-### Migration
+### 5. User interface integration
+
+### 6. Comparaisons
+
+### 7. Migration
 
 ## Project Schedule
 
