@@ -1,4 +1,4 @@
-# [Adaptive image plane sampling](appleseed-adaptive-sampling-project.md) and [resumable renders](appleseed-resumable-renders-project.md) proposal
+# [Adaptive image plane sampling](appleseed-adaptive-sampling-project.md) and [resumable rend wers](appleseed-resumable-renders-project.md) proposal
 
 ## Contact Informations 
 
@@ -11,23 +11,23 @@ Kevin Masson
 
 Current implementation of adaptive sampling needs to be overwriten so that it is more efficient, easier to use for any user and more robust regarding animations. Up to now, appleseed's image plane adaptive sampler is based on a per-pixel variance analysis. To work correctly, it requires a large amount of initial samples, which is not convinient. Moreover, each pixel analysis isn't aware of its neighbours and this lead to an image still noisy.
 
+Also, appleseed doesn't allow to stop a render and start it later. This is an important feature that is verry usefull for artists. Implementing this feature on the command line application would be a first great step for future projects.
+
 ## Benefits
 
 After this project, rendered images would be less noisy compared to the same image renderer with the previous adaptive sampler and the same amount of user provided samples. Using the uniform sampler will not be a necessity anymore to obtain a fireflies-free sequence of image. 
 
-Moreover, a design would have been created to allow resumable renders along with an implementation. 
+Moreover, it would be possible to stop a render and restard it later with appleseed.cli.
 
-## Project Details
+## Adaptive Sampling Details
 
-### Adaptive Sampling
-
-#### Survey
+### Survey
 
 Adaptive image plane sampling can be done in various ways. We need to find what method can be implemented into appleseed. Up to know, *Dammertz and al.*'s method seems to be efficient and work fine on animations. It computes the variance across a block a pixel instead of doing it on each pixel. On each iteration, it samples and then compute each block's variance. If the block's variance is higher than a terminaison threshold, it will then be splitted in 2. The original block being the whole image.
 
 *Yining Karl Li* propose a modification of this method to make it more efficient. He sets a lower bound on blocks' size to avoid undersampling of some pixels. Also, instead of reducing the number of sample when blocks are getting closer to the threshold, it simply keep the same amount of path and reallocate them to high-variance pixels. This reduce noise and fireflies in the final image.
 
-#### Tests / Optimization
+### Tests / Optimization
 
 - Test if the rendered images are correct
 - Observe how pixels are sampled
