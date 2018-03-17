@@ -1,4 +1,4 @@
-# [Adaptive image plane sampling proposal](appleseed-adaptive-sampling-project.md)
+# [Adaptive image plane sampling](appleseed-adaptive-sampling-project.md) and [resumable renders](appleseed-resumable-renders-project.md) proposal
 
 ## Contact Informations 
 
@@ -15,32 +15,19 @@ Current implementation of adaptive sampling needs to be overwriten so that it is
 
 After this project, rendered images would be less noisy compared to the same image renderer with the previous adaptive sampler and the same amount of user provided samples. Using the uniform sampler will not be a necessity anymore to obtain a fireflies-free sequence of image. 
 
-## Deliverables
-
-In the source code of appleseed, I will add and or edit the following:
-- `src/appleseed/renderer/kernel/rendering/generic/...`
-    - `tilejob.cpp`
-    - `adaptivetilerenderer.cpp`
-    - `uniformtilerenderer.cpp`
-    - `tilerendererbase.cpp`
-- `src/appleseed/renderer/kernel/rendering/final/...`
-    - `adaptivepixelrenderer.cpp`
- 
-I will also write a wiki page to explain how it works and on what it was implemented.
+Moreover, a design would have been created to allow resumable renders along with an implementation. 
 
 ## Project Details
 
-See [appleseed-adaptive-sampling-project.md](appleseed-adaptive-sampling-project.md) for the original project description.
+### Adaptive Sampling
 
-### 1. Survey
+#### Survey
 
 Adaptive image plane sampling can be done in various ways. We need to find what method can be implemented into appleseed. Up to know, *Dammertz and al.*'s method seems to be efficient and work fine on animations. It computes the variance across a block a pixel instead of doing it on each pixel. On each iteration, it samples and then compute each block's variance. If the block's variance is higher than a terminaison threshold, it will then be splitted in 2. The original block being the whole image.
 
 *Yining Karl Li* propose a modification of this method to make it more efficient. He sets a lower bound on blocks' size to avoid undersampling of some pixels. Also, instead of reducing the number of sample when blocks are getting closer to the threshold, it simply keep the same amount of path and reallocate them to high-variance pixels. This reduce noise and fireflies in the final image.
 
-### 2. Implementation / Refactoring
-
-### 3. Tests / Optimization
+#### Tests / Optimization
 
 - Test if the rendered images are correct
 - Observe how pixels are sampled
@@ -51,11 +38,15 @@ Adaptive image plane sampling can be done in various ways. We need to find what 
 
 I will have vacations from May 25 to August 31, which leaves a bit more time than planned. I will be able to work completly on this project during this period. I will also be available before May 25 because most of my units would have been finished by then. Here is an estimation of the project schedule:
 
-#### Until May 14: Community Bonding
+### Community Bonding
+
+#### Until May 14
 
 - Actively contribute
 - Get familiar with appleseed's render pipeline
 - Get familiar with blenderseed
+
+### Adaptive Sampling
 
 #### Week of May 14
 
@@ -107,24 +98,29 @@ I will have vacations from May 25 to August 31, which leaves a bit more time tha
 
 #### Week of July 9: End of phase 2
 
-- Evaluation of Pahse 2
+- Evaluation of Phase 2
 - Preparation for Phase 3
 - Work on the final report
-
+- Compare results with the original adaptive sampler
+ 
 #### Week of July 16
 
-- Continuing last week work
 - Test again with the same scenes as before
+- Remove the original adaptive sampler
+- Final fixes, tests and documentations
+
+### Resumable Renders
 
 #### Week of July 23
 
-- Compare results with the original adaptive sampler
-- Benchmarking
+- Find how to interrupt renders
+- List things that need to be saved to resume the render
+- Implement a current rendering-state saver
+- Implement interruption and use the previous file saver
 
 #### Week of July 30
 
-- Remove the original adaptive sampler
-- Final fixes, tests and documentations
+- Allow to restart a render from appleseed.cli
 
 #### Week of August 6
 
