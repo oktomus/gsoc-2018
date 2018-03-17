@@ -11,7 +11,7 @@ Kevin Masson
 
 Current implementation of adaptive sampling needs to be overwriten so that it is more efficient, easier to use for any user and more robust regarding animations. Up to now, appleseed's image plane adaptive sampler is based on a per-pixel variance analysis. To work correctly, it requires a large amount of initial samples, which is not convinient. Moreover, each pixel analysis isn't aware of its neighbours and this lead to an image still noisy.
 
-Also, appleseed doesn't allow to stop a render and start it later. This is an important feature that is verry usefull for artists. Implementing this feature on the command line application would be a first great step for future projects.
+Also, appleseed doesn't allow to stop a render and start it later. This is an important feature that is verry useful for artists. Implementing this feature on the command line application would be a first great step for future projects.
 
 ## Benefits
 
