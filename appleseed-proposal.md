@@ -9,23 +9,23 @@ Kevin Masson
 
 ## Synopsis
 
-Current implementation of adaptive sampling needs to be overwriten so that it is more efficient, easier to use for any user and more robust regarding animations. Up to now, appleseed's image plane adaptive sampler is based on a per-pixel variance analysis. To work correctly, it requires a large amount of initial samples, which is not convinient. Moreover, each pixel analysis isn't aware of its neighbours and this lead to an image still noisy.
+The current implementation of adaptive sampling needs to be overwriten, so that it is more efficient, easier to use for any user and more robust regarding animations. Up to now, appleseed's image plane adaptive sampler is based on a per-pixel variance analysis. To work correctly, it requires a large amount of initial samples, which is not convenient. Moreover, each pixel analysis isn't aware of its neighbours and this lead to an image still noisy.
 
-Also, appleseed doesn't allow to stop a render and start it later. This is an important feature that is verry useful for artists. Implementing this feature on the command line application would be a first great step for future projects.
+Also, appleseed doesn't allow to stop a render and start it later. This is an important feature that is very useful for artists. Implementing this feature on the command line application would be a first great step for future projects.
 
 ## Benefits
 
-After this project, rendered images would be less noisy compared to the same image renderer with the previous adaptive sampler and the same amount of user provided samples. Using the uniform sampler will not be a necessity anymore to obtain a fireflies-free sequence of image. 
+After this project, rendered images would be less noisy compared to the same image rendered with the previous adaptive sampler and the same amount of user provided samples. Using the uniform sampler will not be a necessity anymore to obtain a fireflies-free sequence of image. 
 
-Moreover, it would be possible to stop a render and restard it later with appleseed.cli.
+Moreover, it would be possible to stop a render and restart it later with appleseed.cli.
 
 ## Adaptive Sampling Details
 
 ### Survey
 
-Adaptive image plane sampling can be done in various ways. We need to find what method can be implemented into appleseed. Up to know, *Dammertz and al.*'s method seems to be efficient and work fine on animations. It computes the variance across a block a pixel instead of doing it on each pixel. On each iteration, it samples and then compute each block's variance. If the block's variance is higher than a terminaison threshold, it will then be splitted in 2. The original block being the whole image.
+Adaptive image plane sampling can be done in various ways. We need to find what method can be implemented into appleseed. Up to now, *Dammertz and al.*'s method seems to be efficient and work fine on animations. It computes the variance across a block a pixel instead of doing it on each pixel. On each iteration, it samples and then compute each block's variance. If the block's variance is higher than a termination threshold, it will then be split in 2. The original block being the whole image.
 
-*Yining Karl Li* propose a modification of this method to make it more efficient. He sets a lower bound on blocks' size to avoid undersampling of some pixels. Also, instead of reducing the number of sample when blocks are getting closer to the threshold, it simply keep the same amount of path and reallocate them to high-variance pixels. This reduce noise and fireflies in the final image.
+*Yining Karl Li* propose a modification of this method to make it more efficient. He sets a lower bound on blocks' size to avoid undersampling of some pixels. Also, instead of reducing the number of sample when blocks are getting closer to the threshold, it simply keeps the same amount of sample and reallocate them to high-variance pixels. This reduces noise and fireflies in the final image.
 
 ### Tests / Optimization
 
@@ -56,8 +56,8 @@ I will have vacations from May 25 to August 31, which leaves a bit more time tha
 
 #### Week of May 21
 
-- Get familiar with the choosen method 
-- Schematize the algorithm
+- Get familiar with the chosen method 
+- Outline the algorithm
 - Produce diagrams of what the final code structure would be
 - Propose an interface for configuring the sampler
 - Discuss of the structure with maintainers
@@ -89,7 +89,7 @@ I will have vacations from May 25 to August 31, which leaves a bit more time tha
 #### Week of June 25
 
 - Optimize the algorithm
-- Optimize memory managment
+- Optimize memory management
 
 #### Week of July 2
 
@@ -129,7 +129,7 @@ I will have vacations from May 25 to August 31, which leaves a bit more time tha
 
 ## Bio
 
-I am 21 year old, studying *Compute Science and Image Science* at the University of Strasbourg, France, currently in first year of a Master's Degree. Computer graphics and especially rendering passionates me, I am doing my best for being ready to enter the industry. I have experience with NPR and real-time rendering, and I am learning about physically based renderers. I have professional experience with Python which I acquired by working in 2 different animation studios (one in Luxembourg named *La Fabrique d'Images* and one in Paris named *Ellipsanime*). Developping tools for artists was my principal task. Thanks to school and personnal projects, I have advanced knowledge of C++ and C. Also, I am starting to get confortable with Scientific Papers as I am using them to implement school projects.
+I am 21, studying *Compute Science and Image Science* at the University of Strasbourg, France, currently in the first year of a Master's Degree. Computer graphics and especially rendering fascinate me, I am doing my best for being ready to enter the industry. I have experience with NPR and real-time rendering, and I am learning about physically based renderers. I have professional experience with Python, which I acquired by working in 2 different animation studio (one in Luxembourg named *La Fabrique d'Images* and one in Paris named *Ellipsanime*). Developing tools for artists was my principal task. Thanks to school and personal projects, I have advanced knowledge of C++ and C. Also, I am starting to get comfortable with Scientific Papers as I am using them to implement school projects.
 
 ## References
 
