@@ -1,4 +1,4 @@
-# [Adaptive image plane sampling](appleseed-adaptive-sampling-project.md) and [resumable rend wers](appleseed-resumable-renders-project.md) proposal
+# [Adaptive image plane sampling](appleseed-adaptive-sampling-project.md) and [resumable renders](appleseed-resumable-renders-project.md) proposal
 
 ## Contact Informations 
 
