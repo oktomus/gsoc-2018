@@ -4,12 +4,12 @@
 ## Adaptive Image Plane Sampling and Resumable Rendering for appleseed
 
 I was lucky to participate at GSoC 2018. I enjoyed my summer to work on 2 different projects. I succesfully finished the first project (adaptive sampling) and the second one is waiting to be merged.
-You can take a look a the [original proposal](appleseed-proposal.md).
+You can take a look at the [original proposal](appleseed-proposal.md). All the code that I wrote was merged into master and will be available for the next release, except resumable rendering's whose review is pending. 
 
 
-### Community bounding period and before
+### Community bonnding period and before
 
-Before GSoC started, I made some pull requests to get familiar with the code base.
+Before GSoC started, I made some pull requests that were merged into master to get familiar with the code base.
 
 - [Let frame/tile/pixel engines print their parameters when rendering starts](https://github.com/appleseedhq/appleseed/pull/1859)
 - [Don't reset trackers when sampling is finished](https://github.com/appleseedhq/appleseed/pull/1862)
@@ -21,12 +21,12 @@ Before GSoC started, I made some pull requests to get familiar with the code bas
 - [Implement Correlated Multi-Jittered Sampling](https://github.com/appleseedhq/appleseed/pull/1975)
 - And other smaller features ...
 
-We started talking about adaptive sampling even before GSoC started. During the community bounding period, we talked about different possibilites and what algorithm should be implemented. I also enjoyed this period to read some papers and other renderer's documentation to get an idea of what is the current state of the art of adaptive image sampling.
+We started talking about adaptive sampling even before GSoC started. During the community bonding period, we talked about different possibilites and what algorithm should be implemented. I also enjoyed this period to read some papers and other renderer's documentation to get an idea of what is the current state-of-the-art of adaptive image sampling.
 
 
 ### Code
 
-These are the pull requests I submited during the coding period. Sorted from the older to the newer one.
+These are the pull requests I submited during the coding period. Sorted from the oldest to the newest one.
 
 - **[Adaptive Sampling](https://github.com/appleseedhq/appleseed/pull/2062)**
 - [Add a precision parameter for statistics](https://github.com/appleseedhq/appleseed/pull/2067)
@@ -46,20 +46,16 @@ These are the pull requests I submited during the coding period. Sorted from the
 
 ### Adaptive Image Plane Sampling: Results
 
-<img src="3m58_comp.png"/>
+<img src="4m49_comp.png"/>
 
-**Comparison of 4 minutes rendering time** (Left: Uniform, Middle: Adaptive, Right: Adaptive sampling map)
-
-<img src="3m58_comp_zoom1.png"/>
-<img src="3m58_comp_zoom2.png"/>
+**Comparison of 4 minutes 50 rendering time** 
+(Top left: uniform, top right: adaptive, bottom left: adaptive sampling map, bottom right: difference between uniform and adaptive)
 
 <img src="5m54_comp.png"/>
 
-**Comparison of 6 minutes rendering time** (Left: Uniform, Middle: Adaptive, Right: Adaptive sampling map)
+**Comparison of 6 minutes rendering time** 
 
-<img src="5m54_comp_zoom1.png"/>
-<img src="5m54_comp_zoom2.png"/>
-
+The adaptive sampler is doing a much better job in noisy areas. To do so, it samples less in easy areas and use these saved samples in noisy areas. We get much more quality in complicated areas but easy areas are undersampled compared to the uniform renderer so they can look noiser depending on the settings. Here in both case easy ares are noiser but you can barely notice it.
 
 ### Resumable Rendering: Results
 
