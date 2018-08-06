@@ -48,14 +48,14 @@ These are the pull requests I submited during the coding period. Sorted from the
 
 <img src="3m58_comp.png"/>
 
-**Comparaison of 4 minutes rendering time** (Left: Uniform, Middle: Adaptive, Right: Adaptive sampling map)
+**Comparison of 4 minutes rendering time** (Left: Uniform, Middle: Adaptive, Right: Adaptive sampling map)
 
 <img src="3m58_comp_zoom1.png"/>
 <img src="3m58_comp_zoom2.png"/>
 
 <img src="5m54_comp.png"/>
 
-**Comparaison of 6 minutes rendering time** (Left: Uniform, Middle: Adaptive, Right: Adaptive sampling map)
+**Comparison of 6 minutes rendering time** (Left: Uniform, Middle: Adaptive, Right: Adaptive sampling map)
 
 <img src="5m54_comp_zoom1.png"/>
 <img src="5m54_comp_zoom2.png"/>
@@ -100,3 +100,9 @@ What needs to be done for resumable rendering:
 - [Adaptive Sampling on Takua](https://blog.yiningkarlli.com/2015/03/adaptive-sampling.html)
 - [Simon Kallweit final report for Computer Graphics ETHZ 2015](http://simon-kallweit.me/rendercompo2015/report/)
 - [Sony Pictures Imageworks Arnold](https://fpsunflower.github.io/ckulla/data/2018_tog_spi_arnold.pdf)
+
+
+### Final words
+
+The appleseed community is full of awesome people that I would like to thank. It's been a lot of fun and I learned much more than I could have imagined. The advanture is only starting, when you meet a community like this, you don't want to leave it. Special thanks to @franz and @est for being pacient and helpfull with me.
+
