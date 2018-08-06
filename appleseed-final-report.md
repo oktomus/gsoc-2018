@@ -51,9 +51,13 @@ These are the pull requests I submited during the coding period. Sorted from the
 **Comparison of 4 minutes 50 rendering time** 
 (Top left: uniform, top right: adaptive, bottom left: adaptive sampling map, bottom right: difference between uniform and adaptive)
 
+<img src="4m49_comp_closeup.png"/>
+
 <img src="5m54_comp.png"/>
 
 **Comparison of 6 minutes rendering time** 
+
+<img src="5m54_comp_closeup.png"/>
 
 The adaptive sampler is doing a much better job in noisy areas. To do so, it samples less in easy areas and use these saved samples in noisy areas. We get much more quality in complicated areas but easy areas are undersampled compared to the uniform renderer so they can look noiser depending on the settings. Here in both case easy ares are noiser but you can barely notice it.
 
@@ -100,5 +104,5 @@ What needs to be done for resumable rendering:
 
 ### Final words
 
-The appleseed community is full of awesome people that I would like to thank. It's been a lot of fun and I learned much more than I could have imagined. The advanture is only starting, when you meet a community like this, you don't want to leave it. Special thanks to @franz and @est for being pacient and helpfull with me.
+The appleseed community is full of awesome people that I would like to thank. It's been a lot of fun and I learned much more than I could have imagined. The advanture is only starting, when you meet a community like this, you don't want to leave it. Special thanks to François Beaune and Esteban Tovagliari for being pacient and very helpfull with me.
 
