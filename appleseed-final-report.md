@@ -3,8 +3,7 @@
 
 ## Adaptive Image Plane Sampling and Resumable Rendering for appleseed
 
-I was lucky to participate at GSoC 2018. I enjoyed my summer to work on 2 different projects. I succesfully finished the first project (adaptive sampling) and the second one is waiting to be merged.
-You can take a look at the [original proposal](appleseed-proposal.md). All the code that I wrote was merged into master and will be available for the next release, except resumable rendering's whose review is pending. 
+I was lucky to participate at GSoC 2018 and spend my time on the physically-based renderer named appleseed. I took care of 2 different rendering projects. I succesfully finished the first project (adaptive sampling) and the second one is waiting to be merged. Briefly, the goal of adaptive sampling is to spend more rendering time on complicated areas of an image rather than spending the same time on all areas. And resumable rendering allows to save the state of the renderer after each rendering pass to be able to restore from that point. You can take a look at the [original proposal](appleseed-proposal.md). All the code that I wrote was **merged into master and will be available for the next release**, except resumable rendering's whose review is pending. 
 
 
 ### Community bonnding period and before
@@ -38,10 +37,10 @@ These are the pull requests I submited during the coding period. Sorted from the
 - [Make percent statistics mergeable](https://github.com/appleseedhq/appleseed/pull/2107)
 - [Fix missing extension when saving a file from studio](https://github.com/appleseedhq/appleseed/pull/2108)
 - [Refactor CameraController](https://github.com/appleseedhq/appleseed/pull/2112)
-- **[Resumable rendering: save and restore checkpoints](https://github.com/appleseedhq/appleseed/pull/2120)**
+- **[Resumable rendering: save and restore checkpoints](https://github.com/appleseedhq/appleseed/pull/2120)** (pending review)
 - [Use regular AOVs to export diagnostic AOVs](https://github.com/appleseedhq/appleseed/pull/2121)
 - **[Adaptive sampling: fix invalid noise values in empty areas](https://github.com/appleseedhq/appleseed/pull/2134)**
-- **[Adaptive sampling: improve settings and behavior](https://github.com/appleseedhq/appleseed/pull/2147)**
+- **[Adaptive sampling: improve settings and behavior](https://github.com/appleseedhq/appleseed/pull/2147)** (pending review)
 
 
 ### Adaptive Image Plane Sampling: Results
