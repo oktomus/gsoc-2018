@@ -1,0 +1,5 @@
+- [appleseed](https://appleseedhq.net/)
+- [GSoC appleseed](https://summerofcode.withgoogle.com/organizations/5168478307221504/)
+- [GSoC project](https://summerofcode.withgoogle.com/projects/#6410058406035456)
+- [Final report](appleseed-final-report.md)
+- [Proposal](appleseed-proposal.md)
